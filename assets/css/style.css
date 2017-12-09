@@ -2,3 +2,10 @@ div.jumbotron{
 	background-color: #20315A; 
 	color: white;
 }
+.required {
+    color: #cc3214;
+}
+span.legend-required-container {
+    color: #cc3214;
+    margin-left: 15px;
+}
