@@ -1,13 +1,12 @@
 $(document).ready(function() {	
 
-
-
-let query = $("#query").text();
-let startYear = $("#startYear").text();
-let endYear = $("#endYear").text();
-let ofRecords = $("#ofRecords").text();
-
 $("#searchButton").on("click", function() {
+
+let query = $("#query").val();
+let startYear = $("#startYear").val();
+let endYear = $("#endYear").val();
+let ofRecords = $("#ofRecords").val();	
+
 
 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"; 
 
@@ -18,7 +17,7 @@ url += '?' + $.param({
   'begin_date': startYear + "0101",
   'end_date': endYear + "1230"
 });
-
+console.log(url);
 $.ajax({
   url: url,
   method: 'GET',
@@ -36,8 +35,6 @@ $.ajax({
             var returnedValue = function() {
               
             };
-
-
 
             $("<p>").text("Rating: " + rating);
 
