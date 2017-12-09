@@ -1,13 +1,12 @@
 $(document).ready(function() {	
 
-
+$("#searchButton").on("click", function() {
 
 let query = $("#query").val();
 let startYear = $("#startYear").val();
 let endYear = $("#endYear").val();
-let ofRecords = $("#ofRecords").val();
+let ofRecords = $("#ofRecords").val();	
 
-$("#searchButton").on("click", function() {
 
 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"; 
 
@@ -18,7 +17,7 @@ url += '?' + $.param({
   'begin_date': startYear + "0101",
   'end_date': endYear + "1230"
 });
-
+console.log(url);
 $.ajax({
   url: url,
   method: 'GET',
@@ -37,6 +36,7 @@ $.ajax({
             var returnedValue = function() {
               $('#results').append(`<h1>${title}</h1><p>${snippet}</p>`);
             };
+
             // var personImage = $("<img>");
             // personImage.attr("src", results[i].images.fixed_height.url);
 
@@ -45,6 +45,6 @@ $.ajax({
 
             $("#results").prepend(gifDiv);
           }
-        })
+        });
     });	
 });
