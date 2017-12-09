@@ -10,17 +10,12 @@
 
 
             var returnedValue = function() {
-              
+              $('#results').append(`<h1>${title}</h1><p>${snippet}</p>`);
             };
-
-
-
-            $("<p>").text("Rating: " + rating);
-
             // var personImage = $("<img>");
             // personImage.attr("src", results[i].images.fixed_height.url);
 
-            articleDiv.prepend(snippet);
+            // articleDiv.prepend(snippet);
             // articleDiv.prepend(personImage);
 
             $("#results").prepend(gifDiv);
